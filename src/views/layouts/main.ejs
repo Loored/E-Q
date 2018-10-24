@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Nodejs</title>
+</head>
+<body>
+    <% if (!user) { %> 
+    <a href="/signin">Signin</a>
+    <a href="/signup">Signup</a>
+    <% } else { %>
+    <a href="/logout">Logout</a>
+    <a href="/profile">Profile</a>
+    <% } %>
+    <% if (signupMessage) { %>
+        <p> <%= signupMessage %> </p>
+    <% } %>       
+    <% if (signinMessage) { %>
+        <p> <%= signinMessage %> </p>
+    <% } %>       
+    <%- body %>
+</body>
+</html>
