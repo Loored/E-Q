@@ -29,11 +29,12 @@ router.post('/signin', passport.authenticate('local-signin', {
   failureFlash: true
 }));
 
+
+// Depsues de aqui estan restricciones / protegidas
+
 router.get('/profile', isAuthenticated, function (req, res, next) {
   res.render('profile');
 });
-
-// Depsues de aqui estan restricciones / protegidas
 
 router.get('/logout', (req, res, next) => {
   req.logout();

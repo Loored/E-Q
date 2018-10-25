@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Login Nodejs</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
 </head>
 <body>
+
     <% if (!user) { %> 
-    <a href="/signin">Signin</a>
-    <a href="/signup">Signup</a>
+    <div>
+        <a href="/signin">Signin</a>
+        <a href="/signup">Signup</a>
+    </div>
     <% } else { %>
     <a href="/logout">Logout</a>
     <a href="/profile">Profile</a>
+    <img width="50" height="50" src="../../public/images/alegria_corriendo_pikachu_dibujo_colorear.png" alt="pikapika">
     <% } %>
     <% if (signupMessage) { %>
         <p> <%= signupMessage %> </p>
