@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <title>Login Nodejs</title>
     <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+    <script src="socket.io/socket.io.js"></script>
+    
 </head>
 <body>
-
+<script>
+        const socket = io("http://localhost:3000");
+        socket.on('lectura',function(dato){
+            console.log(dato);
+        });
+    </script>
     <% if (!user) { %> 
     <div>
         <a href="/signin">Signin</a>
