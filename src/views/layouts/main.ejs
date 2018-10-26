@@ -2,26 +2,70 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login Nodejs</title>
-    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
-    <script src="socket.io/socket.io.js"></script>
-    
+    <title>Login Earth-Q</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
 </head>
 <body>
-<script>
-        const socket = io("http://localhost:3000");
-        socket.on('lectura',function(dato){
-            console.log(dato);
-        });
-    </script>
     <% if (!user) { %> 
-    <div>
-        <a href="/signin">Signin</a>
-        <a href="/signup">Signup</a>
+    <div class="">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="/">Earth-Q</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" 
+                aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarColor03">
+                    <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/graphics">Graphics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <a class="btn btn-secondary my-2 my-sm-0" href="/signup">Sign Up</a>
+                    </form>
+                </div>
+            </nav>
     </div>
     <% } else { %>
-    <a href="/logout">Logout</a>
-    <a href="/profile">Profile</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">Earth-Q</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" 
+            aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Overview</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/graphics">Graphics</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit"><a href="/profile">Profile</a></button>
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit"><a href="/">Sign Out</a></button>
+                </form>
+            </div>
+        </nav>
     <img width="50" height="50" src="../../public/images/alegria_corriendo_pikachu_dibujo_colorear.png" alt="pikapika">
     <% } %>
     <% if (signupMessage) { %>
@@ -30,6 +74,6 @@
     <% if (signinMessage) { %>
         <p> <%= signinMessage %> </p>
     <% } %>       
+    
     <%- body %>
-</body>
-</html>
+
